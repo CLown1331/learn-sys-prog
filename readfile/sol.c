@@ -25,5 +25,9 @@ int main(int argc, char **argv) {
         free(line);
     }
 
+    if (fp) {
+        fclose(fp);
+    }
+
     exit(EXIT_SUCCESS);
 }
