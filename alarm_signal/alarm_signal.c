@@ -11,8 +11,7 @@ void sig_handler(int signum) {
 
 int main() {
 	alarm(5);
-	signal(SIGALRM, &sig_handler);
-
+	signal(SIGALRM, sig_handler);
 	for(;;)
 		sleep(1);
 
