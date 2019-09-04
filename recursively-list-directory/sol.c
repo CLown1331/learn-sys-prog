@@ -7,7 +7,7 @@
 int main(int argc, char **argv) {
     DIR *dp;
 
-    struct dirent dirp;
+    struct dirent *dirp;
 
     if (argc != 2) {
         printf("No args provided!\n");
@@ -19,7 +19,9 @@ int main(int argc, char **argv) {
         exit(1);
     }
 
-    while((dirp = readdir(dp)) !=  )
+    while((dirp = readdir(dp)) !=  NULL) {
+        printf("%s ", dirp->d_name);
+    }
 
     closedir(dp);
     return 0;
